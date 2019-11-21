@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  tomcat.max-threads: 1
+  tomcat.uri-encoding: UTF-8
+  servlet:    context-path: /bootDemo
+logging:  config: 
+    classpath:log/log4j2.xml
+  
+spring:  datasource:    url: jdbc:oracle:thin:@localhost:1521:ORCL
+    username: TEST
+    password: '000000'
+    # Hikari 连接池数据源专用配置
+    hikari:      maximum-pool-size: 20
+      connection-test-query: select 1 from dual
+      connection-timeout: 3000
+  # Redis 使用配置
+  redis:     host: 127.0.0.1
+    port: 6379
+  #  password: '000000'   
+    lettuce:      pool:        max-idle: 10
+        min-idle: 0
+        max-active: 100
+        max-wait: -1
+    timeout: 2000
+  cache:
+    ehcache:
+      config: classpath:cache/ehcache.xml
+    type: EHCACHE
+    
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+    hibernate:
+      ddl-auto: update     
+  
+      
+   
+    
+              
+     
+     
+ 
