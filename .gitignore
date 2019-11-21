@@ -2,7 +2,10 @@
 */build/
 */bin/
 */gradle/
-*.settings.gradle
+*/settings.gradle
+*/gradlew
+
+
 
 
 # Ignore Gradle GUI config
@@ -28,6 +31,7 @@ gradle-app.setting
 *.ear
 *.swp
 *.log
+*.bat
 
 .tags*
 .idea/
